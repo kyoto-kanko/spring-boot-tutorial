@@ -1,4 +1,4 @@
-package dto;
+package com.example.springboottutorial.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

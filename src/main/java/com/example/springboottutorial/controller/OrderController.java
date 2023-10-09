@@ -1,8 +1,7 @@
 package com.example.springboottutorial.controller;
 
 import com.example.springboottutorial.service.PaymentService;
-import dto.OrderRequest;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.springboottutorial.dto.OrderRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +18,7 @@ public class OrderController {
 
     @PostMapping("/pay")
     public ResponseEntity<String> placeOrder(@RequestBody OrderRequest orderRequest) {
-        String paymentResponse = paymentService.pay(orderRequest.getAmount());
+        final String paymentResponse = paymentService.pay(orderRequest.getAmount());
         return ResponseEntity.ok(paymentResponse);
     }
 }
